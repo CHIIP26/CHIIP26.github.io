@@ -100,7 +100,7 @@
       });
 
       view.ui.remove("navigation-toggle");
-      view.ui.add("radio", "bottom-right");
+     // view.ui.add("radio", "bottom-right");
 
       map.ground.layers = [new ExaggeratedElevationLayer({
         exaggerationBathymetry: 60,
@@ -183,7 +183,7 @@
               type: "icon",
               resource: { primitive: "circle" },
               material: { color: [0, 0, 0, 0] },
-              outline: { color: [245, 99, 66, 1], size: 2 },
+              outline: { color: [245, 99, 66, 1], size: 4 },
               size: 10
             }]
           }
@@ -217,7 +217,7 @@
       });
 
       map.layers.add(extremesLayer);
-      document.getElementById("male").checked = true;
+      //document.getElementById("male").checked = true;
       
       const guides360 = new GeoJSONLayer({
         url: "locations360.geojson",
@@ -291,7 +291,7 @@
         }
       });
       
-    document.getElementById("male").addEventListener("click", function () {
+  /* document.getElementById("male").addEventListener("click", function () {
         map.layers.add(extremesLayer);
         map.layers.remove(guides360);
         console.log("Escolheu a");
@@ -307,7 +307,7 @@
         map.layers.remove(extremesLayer);
         map.layers.add(guides360);
         console.log("Escolheu a");
-      });      
+      });      */
 
       function closeMenu() {
         document.getElementById("container").style.display = "none";
@@ -347,7 +347,7 @@
 
 <body>
   <div id="viewDiv">
-    <div id="radio">
+    <!-- <div id="radio">
         O que você deseja ver:
       <form>
         <input type="radio" id="male" name="gender" value="male">
@@ -357,7 +357,7 @@
         <input type="radio" id="other" name="gender" value="other">
         <label for="other">Experiências 360°</label>
       </form>
-    </div>
+    </div>-->
     <div id="about">Ajuda</div>
   </div>
   <div id="container">
