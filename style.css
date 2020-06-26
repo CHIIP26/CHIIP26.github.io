@@ -52,7 +52,7 @@ body {
 }
 
 p.info {
-  margin-bottom: 2em;
+  margin-bottom: 0em;
   font-size: 1.1em;
 }
 
@@ -157,4 +157,13 @@ button.esri-icon-close {
   border: 1px solid white;
   transition: all 0.5s;
   cursor: pointer;
+}
+
+#radio {
+  color: black;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  padding: 1em;
+  margin-bottom: 36.3em;
+  background: #FFFFFF;
 }

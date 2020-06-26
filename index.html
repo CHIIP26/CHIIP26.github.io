@@ -34,9 +34,10 @@
       "esri/Graphic",
       "esri/geometry/Point",
       "esri/geometry/Mesh",
+      "esri/layers/support/FeatureReductionCluster",
 
       "esri/core/watchUtils"
-    ], function (Map, SceneView, TileLayer, GeoJSONLayer, Basemap, ExaggeratedElevationLayer, Graphic, Point, Mesh, watchUtils) {
+    ], function (Map, SceneView, TileLayer, GeoJSONLayer, Basemap, ExaggeratedElevationLayer, Graphic, Point, Mesh, FeatureReductionCluster, watchUtils) {
 
 
       const R = 6358137; // approximate radius of the Earth in m
@@ -52,7 +53,7 @@
       });
 
       const map = new Map({
-        basemap: basemap
+        basemap: "streets",
       });
 
       const view = new SceneView({
@@ -79,7 +80,7 @@
         },
         constraints: {
           altitude: {
-            min: 10000000,
+            min: 6000000,
             max: 25000000
           }
         },
@@ -99,6 +100,7 @@
       });
 
       view.ui.remove("navigation-toggle");
+      view.ui.add("radio", "bottom-right");
 
       map.ground.layers = [new ExaggeratedElevationLayer({
         exaggerationBathymetry: 60,
@@ -166,7 +168,7 @@
           mode: "absolute-height",
           offset: offset
         },
-        copyright: "Data from <a href=\"https://en.wikipedia.org/wiki/Extreme_points_of_Earth\" target=\"_blank\">Extreme points on Earth</a> Wikipedia article | <a href=\"https://visibleearth.nasa.gov/view.php?id=57747\" target=\"_blank\">Cloud image</a> from NASA Goddard Space Flight Center (image by Reto Stöckli) for the cloud layer",
+        copyright: "Powered By <a href=\"https://visibleearth.nasa.gov/view.php?id=57747\" target=\"_blank\">Imagem das nuvens</a> cedidas pela NASA (image by Reto Stöckli) e <a href=\"https://hurb.com\" target=\"_blank\">Hurb</a>",
         renderer: {
           type: "simple",
           symbol: {
@@ -182,6 +184,63 @@
               resource: { primitive: "circle" },
               material: { color: [0, 0, 0, 0] },
               outline: { color: [245, 99, 66, 1], size: 2 },
+              size: 10
+            }]
+          }
+        },
+        popupTemplate: {
+          title: "{name}",
+          content: `
+            <div class="popupImage">
+              <img src="{imageUrl}" alt="{imageCaption}"/>
+            </div>
+            <div class="popupImageCaption">{imageCaption}</div>
+            <div class="popupDescription">
+              <p class="info">
+                <span class="esri-icon-map-pin"></span> {subname}
+              </p>
+            <p class="info">
+                <a href="{link1}" target="_blank">{location1}</a><br>
+                <a href="{link2}" target="_blank">{location2}</a><br>
+                <a href="{link3}" target="_blank">{location3}</a><br>
+                <a href="{link4}" target="_blank">{location4}</a><br>
+                <a href="{link5}" target="_blank">{location5}</a><br>
+                <a href="{link6}" target="_blank">{location6}</a><br>
+                <a href="{link7}" target="_blank">{location7}</a><br>
+              </p>
+            </div>
+            <div class="popupCredits">
+              Sources: <a href="{imageCopyrightUrl}" target="_blank">{imageCopyright}</a>.
+            </div>
+          `
+        }
+      });
+
+      map.layers.add(extremesLayer);
+      document.getElementById("male").checked = true;
+      
+      const guides360 = new GeoJSONLayer({
+        url: "locations360.geojson",
+        elevationInfo: {
+          mode: "absolute-height",
+          offset: offset
+        },
+        renderer: {
+          type: "simple",
+          symbol: {
+            type: "point-3d",
+            symbolLayers: [{
+              type: "icon",
+              resource: { primitive: "circle" },
+              url: "pin.png",
+              material: { color: [0, 0, 0, 0] },
+              outline: { color: [255, 150, 66, 1], size: 4 },
+              size: 10
+            }, {
+              type: "icon",
+              resource: { primitive: "circle" },
+              material: { color: [0, 0, 0, 0] },
+              outline: { color: [255, 150, 66, 1], size: 2 },
               size: 30
             }]
           }
@@ -210,8 +269,9 @@
           `
         }
       });
+      
+    view.graphics.add(clouds);      
 
-      map.layers.add(extremesLayer);
 
       document.getElementById("close-about").addEventListener("click", closeMenu);
 
@@ -230,6 +290,24 @@
           });
         }
       });
+      
+    document.getElementById("male").addEventListener("click", function () {
+        map.layers.add(extremesLayer);
+        map.layers.remove(guides360);
+        console.log("Escolheu a");
+      });
+
+    document.getElementById("female").addEventListener("click", function () {
+        map.layers.remove(extremesLayer);
+        map.layers.add(guides360);
+        console.log("Escolheu a");
+      });
+      
+    document.getElementById("other").addEventListener("click", function () {
+        map.layers.remove(extremesLayer);
+        map.layers.add(guides360);
+        console.log("Escolheu a");
+      });      
 
       function closeMenu() {
         document.getElementById("container").style.display = "none";
@@ -257,33 +335,44 @@
           requestAnimationFrame(rotate);
         }
       }
+      
+      function cluster() {
+        if (altitude >= 6000000) {
+           console.log("Escolheu a");
+        }
+      }      
     });
   </script>
 </head>
 
 <body>
   <div id="viewDiv">
-    <div id="about">About this globe</div>
+    <div id="radio">
+        O que você deseja ver:
+      <form>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Guides</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Pontos de interesse</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Experiências 360°</label>
+      </form>
+    </div>
+    <div id="about">Ajuda</div>
   </div>
   <div id="container">
     <div id="introDiv">
-      <h1>The globe of extremes</h1>
+      <h1>Hurb Guides - Mapa Interativo</h1>
       <div id="show-intro">
-        <p> Where is the most distant point from land? What altitude does the highest permanent human settlement have?
-          Who was the first to reach the lowest point on Earth? Click on the orange icons on this globe to find out!
+        <p> Bem-vindo ao nosso globo interativo, aqui você pode navegar entre os nossos guides de forma simples e intuitiva. Caso queira acessar algum guide, você pode usar a barra de pesquisa ou clicar no destino desejado no globo.
         </p>
-        <button id="start-globe">Go to globe</button>
+        <button id="start-globe">Navegar</button>
       </div>
       <div id="show-about" class="hidden">
         <button id="close-about" class="esri-icon-close"></button>
-        <p>3D Globe created by <a href="https://www.esri.com/arcgis-blog/author/j_nelson/" target="_blank">John</a> and
-          <a href="https://www.esri.com/arcgis-blog/author/raluca_zurich/" target="_blank">Raluca</a> after getting
-          inspired by the <a href="https://www.half-earthproject.org/maps/" target="_blank">Half-Earth Project globe</a>, and <a href="https://www.fonterra.com/nz/en/campaign/from-here-to-everywhere.html#/home"
-            target="_blank">this awesome globe</a> and <a href="https://www.instagram.com/p/Bt8zyI-gsqW/"
-            target="_blank">this other awesome globe</a>. We used <a
-            href="https://developers.arcgis.com/javascript/" target="_blank">ArcGIS API for JavaScript</a> to create the interactive globe and <a href="https://pro.arcgis.com/"
-            target="_blank">ArcGIS Pro</a> to create the basemap. Many thanks to Arno Fiva, Christian Iten and Jesse van den Kieboom for the awesome feedback.</p>
-        <p>Read this <a href="https://www.esri.com/arcgis-blog/products/js-api-arcgis/3d-gis/interactive-3d-globe/" target="_blank">blog post</a> to find out how the globe was created. For the curious coders, here is the <a href="https://github.com/RalucaNicola/the-globe-of-extremes" target="_blank">Github repository</a>.</p>
+        <p>Para usar nosso globo interativo basta clicar ou tocar nos circulos de cor laranja.
+           Se desejar uma busca mais rápida, você pode tentar usar a barra de pesquisa. :)</p>
+        <p>Créditos: John and Raluca do ArcGIS API for JavaScript.</p>
       </div>
     </div>
   </div>
