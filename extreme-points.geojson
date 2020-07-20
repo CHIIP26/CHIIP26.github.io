@@ -3,9 +3,9 @@
   "features": [{
       "type": "Feature",
       "properties": {
-        "name": "Pernambuco",
+        "name": "Pernambuco - PE",
         "type": "Região Nordeste do Brasil",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "Recife",
         "link1": "https://guides.hurb.com/recife-pe",
         "location2": "Porto de Galinhas",
@@ -21,13 +21,7 @@
         "location7": "",
         "link7": "",         
         "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Praia_do_Pina_-_Recife%2C_Pernambuco%2C_Brasil.jpg",
-        "imageCaption": "Praia do Pina - Recife",
-        "imageCopyright": "Image by Pavel Novack under CC BY-SA2.5",
-        "imageCopyrightUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-        "source": "Wikipedia Mount Everest article",
-        "sourceUrl": "https://guides.hurb.com/recife-pe",
-        "sourceCopyright": "CC BY-SA 3.0",
-        "sourceCopyrightUrl": "https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"
+        "imageCaption": "Praia do Pina - Recife"
       },
       "geometry": {
         "type": "Point",
@@ -40,9 +34,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Ceará",
+        "name": "Ceará - CE",
         "type": "Região Nordeste",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
        "location1": "Fortaleza",
         "link1": "https://guides.hurb.com/fortaleza-ce",
         "location2": "Canoa Quebrada",
@@ -77,9 +71,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Alagoas",
+        "name": "Alagoas - AL",
         "type": "Região Nordeste do Brasil",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "Maceió",
         "link1": "https://guides.hurb.com/maceio-al/",
         "location2": "Maragogi",
@@ -114,9 +108,9 @@
      {
       "type": "Feature",
       "properties": {
-        "name": "Bahia",
+        "name": "Bahia - BA",
                 "type": "Região Nordeste do Brasil",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "Salvador",
         "link1": "https://guides.hurb.com/salvador-ba/",
         "location2": "Praia do Forte",
@@ -151,9 +145,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "São Paulo",
+        "name": "São Paulo - SP",
                         "type": "Região Sudeste",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "São Paulo",
         "link1": "https://guides.hurb.com/sao-paulo-sp/",
         "location2": "",
@@ -188,9 +182,9 @@
 {
       "type": "Feature",
       "properties": {
-        "name": "Brasília",
+        "name": "Brasília - DF",
                         "type": "Região Centro-Oeste",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "Brasília",
         "link1": "https://guides.hurb.com/brasilia-df/",
         "location2": "",
@@ -225,9 +219,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Espírito Santo",
+        "name": "Espírito Santo - ES",
         "type": "Região Sudeste",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "Vitória",
         "link1": "https://guides.hurb.com/vitoria-es/",
         "location2": "Domingos Martins",
@@ -262,9 +256,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Rio de Janeiro",
+        "name": "Rio de Janeiro - RJ",
         "type": "Região Sudeste",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "Búzios",
         "link1": "https://guides.hurb.com/buzios-rj/",
         "location2": "",
@@ -299,9 +293,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Santa Catarina",
+        "name": "Santa Catarina - SC",
         "type": "Região Sul",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "Balneário Camboriú",
         "link1": "https://guides.hurb.com/balneario-camboriu-sc/",
         "location2": "",
@@ -336,9 +330,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Rio Grande do Sul",
+        "name": "Rio Grande do Sul - RS",
         "type": "Região Sul",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "Gramado",
         "link1": "https://guides.hurb.com/gramado-rs/",
         "location2": "",
@@ -373,9 +367,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Paraná",
+        "name": "Paraná - PR",
         "type": "Região Sul",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "Foz do Iguaçu",
         "link1": "https://guides.hurb.com/foz-do-iguacu-pr/",
         "location2": "",
@@ -410,9 +404,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Mato Grosso",
+        "name": "Mato Grosso - MT",
         "type": "Região Sul",
-        "subname": "Guides neste Estado:", 
+        "subname": "Destinos neste estado:", 
         "location1": "Nobres",
         "link1": "https://guides.hurb.com/nobres-mt/",
         "location2": "",
@@ -447,9 +441,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Argentina",
+        "name": "Argentina - AR",
                "type": "Internacional",
-        "subname": "Guides neste País:", 
+        "subname": "Destinos neste país:", 
         "location1": "Buenos Aires",
         "link1": "https://guides.hurb.com/buenos-aires-arg/",
         "location2": "",
@@ -484,9 +478,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Estados Unidos",
+        "name": "Estados Unidos - EUA",
         "type": "Internacional",
-        "subname": "Guides neste País:", 
+        "subname": "Destinos neste país:", 
         "location1": "Miami",
         "link1": "https://guides.hurb.com/miami-eua/",
         "location2": "Las Vegas",
@@ -503,10 +497,10 @@
         "link7": "", 
         "imageCaption": "Miami Night - EUA",
         "imageUrl": "https://cdn.pixabay.com/photo/2015/03/15/05/50/miami-674069_960_720.jpg",
-        "imageCopyright": "Image by Angela K. Kepler under Public Domain",
-        "imageCopyrightUrl": "https://en.wikipedia.org/wiki/Ducie_Island#/media/File:Ducie02_AKK.jpg",
-        "source": "Pole of inaccessibility Wikipedia article",
-        "sourceUrl": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+        "imageCopyright": "",
+        "imageCopyrightUrl": "",
+        "source": "",
+        "sourceUrl": "",
         "sourceCopyright": "CC BY-SA 3.0",
         "sourceCopyrightUrl": "https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"
       },
@@ -521,9 +515,9 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Itália",
+        "name": "Itália - IT",
         "type": "Internacional",
-        "subname": "Guides neste País:", 
+        "subname": "Destinos neste país:", 
         "location1": "Roma",
         "link1": "https://guides.hurb.com/roma-ita/",
         "location2": "",
@@ -540,10 +534,10 @@
         "link7": "", 
         "imageCaption": "Roma, Itália",
         "imageUrl": "https://cdn.pixabay.com/photo/2020/02/29/07/48/rome-4889381_960_720.jpg",
-        "imageCopyright": "Image by Angela K. Kepler under Public Domain",
-        "imageCopyrightUrl": "https://en.wikipedia.org/wiki/Ducie_Island#/media/File:Ducie02_AKK.jpg",
-        "source": "Pole of inaccessibility Wikipedia article",
-        "sourceUrl": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
+        "imageCopyright": "",
+        "imageCopyrightUrl": "",
+        "source": "",
+        "sourceUrl": "",
         "sourceCopyright": "CC BY-SA 3.0",
         "sourceCopyrightUrl": "https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"
       },
@@ -558,11 +552,11 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "México",
+        "name": "México - MX",
         "type": "Internacional",
-        "subname": "Guides neste País:", 
+        "subname": "Destinos neste país:", 
         "location1": "Cancún",
-        "link1": "https://guides.hurb.com/roma-ita/",
+        "link1": "https://guides.hurb.com/cancun-mex/",
         "location2": "",
         "link2": "",
         "location3": "",
@@ -575,14 +569,8 @@
         "link6": "", 
         "location7": "",
         "link7": "", 
-        "imageCaption": "Ducie Atoll, closest landmass to Point Nemo",
-        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Ducie02_AKK.jpg",
-        "imageCopyright": "Image by Angela K. Kepler under Public Domain",
-        "imageCopyrightUrl": "https://en.wikipedia.org/wiki/Ducie_Island#/media/File:Ducie02_AKK.jpg",
-        "source": "Pole of inaccessibility Wikipedia article",
-        "sourceUrl": "https://en.wikipedia.org/wiki/Pole_of_inaccessibility",
-        "sourceCopyright": "CC BY-SA 3.0",
-        "sourceCopyrightUrl": "https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License"
+        "imageCaption": "Cidade do México, MX",
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Mexico_City_Reforma_skyline_%28cropped%29.jpg"
       },
       "geometry": {
         "type": "Point",
